@@ -29,42 +29,42 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Formslogin));
-            Usuario = new TextBox();
-            Caixasenha = new TextBox();
-            button1 = new Button();
+            TextboxLogin = new TextBox();
+            textboxSenha = new TextBox();
+            buttonEntrar = new Button();
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
-            label4 = new Label();
+            labelTitulo = new Label();
             pictureBox1 = new PictureBox();
             Resultado = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
-            // Usuario
+            // TextboxLogin
             // 
-            Usuario.Location = new Point(298, 81);
-            Usuario.Name = "Usuario";
-            Usuario.Size = new Size(100, 23);
-            Usuario.TabIndex = 0;
+            TextboxLogin.Location = new Point(298, 81);
+            TextboxLogin.Name = "TextboxLogin";
+            TextboxLogin.Size = new Size(100, 23);
+            TextboxLogin.TabIndex = 0;
             // 
-            // Caixasenha
+            // textboxSenha
             // 
-            Caixasenha.Location = new Point(298, 124);
-            Caixasenha.Name = "Caixasenha";
-            Caixasenha.Size = new Size(100, 23);
-            Caixasenha.TabIndex = 1;
+            textboxSenha.Location = new Point(298, 124);
+            textboxSenha.Name = "textboxSenha";
+            textboxSenha.Size = new Size(100, 23);
+            textboxSenha.TabIndex = 1;
             // 
-            // button1
+            // buttonEntrar
             // 
-            button1.BackColor = SystemColors.Control;
-            button1.Location = new Point(308, 180);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 2;
-            button1.Text = "Entrar";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
+            buttonEntrar.BackColor = SystemColors.Control;
+            buttonEntrar.Location = new Point(308, 180);
+            buttonEntrar.Name = "buttonEntrar";
+            buttonEntrar.Size = new Size(75, 23);
+            buttonEntrar.TabIndex = 2;
+            buttonEntrar.Text = "Entrar";
+            buttonEntrar.UseVisualStyleBackColor = false;
+            buttonEntrar.Click += button1_Click;
             // 
             // label1
             // 
@@ -94,16 +94,16 @@
             label3.Size = new Size(0, 15);
             label3.TabIndex = 5;
             // 
-            // label4
+            // labelTitulo
             // 
-            label4.AutoSize = true;
-            label4.BackColor = SystemColors.GradientInactiveCaption;
-            label4.Font = new Font("Segoe Script", 30F);
-            label4.Location = new Point(142, 9);
-            label4.Name = "label4";
-            label4.Size = new Size(362, 64);
-            label4.TabIndex = 6;
-            label4.Text = "Bike For Health";
+            labelTitulo.AutoSize = true;
+            labelTitulo.BackColor = SystemColors.GradientInactiveCaption;
+            labelTitulo.Font = new Font("Segoe Script", 30F);
+            labelTitulo.Location = new Point(142, 9);
+            labelTitulo.Name = "labelTitulo";
+            labelTitulo.Size = new Size(362, 64);
+            labelTitulo.TabIndex = 6;
+            labelTitulo.Text = "Bike For Health";
             // 
             // pictureBox1
             // 
@@ -132,13 +132,13 @@
             BackColor = SystemColors.ButtonFace;
             ClientSize = new Size(576, 402);
             Controls.Add(Resultado);
-            Controls.Add(label4);
+            Controls.Add(labelTitulo);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
-            Controls.Add(button1);
-            Controls.Add(Caixasenha);
-            Controls.Add(Usuario);
+            Controls.Add(buttonEntrar);
+            Controls.Add(textboxSenha);
+            Controls.Add(TextboxLogin);
             Controls.Add(pictureBox1);
             Name = "Formslogin";
             Text = "Login";
@@ -149,13 +149,13 @@
 
         #endregion
 
-        private TextBox Usuario;
-        private TextBox Caixasenha;
-        private Button button1;
+        private TextBox TextboxLogin;
+        private TextBox textboxSenha;
+        private Button buttonEntrar;
         private Label label1;
         private Label label2;
         private Label label3;
-        private Label label4;
+        private Label labelTitulo;
         private PictureBox pictureBox1;
         private Label Resultado;
     }
