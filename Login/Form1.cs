@@ -2,56 +2,50 @@ using System.Diagnostics.Eventing.Reader;
 
 namespace Login
 {
+
     public partial class Formslogin : Form
     {
+        List<string> listaUsuarios = new List<string>() { "neymar.jr", "pablo.Vittar}","sukuna.silva" }; // Criar o array de nomes de usuários
+
         public Formslogin()
         {
             InitializeComponent();
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-            string login = TextboxLogin.Text;
-
-            Resultado.Text = login;
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
 
-            string login = TextboxLogin.Text;
-            
+            string loginbuscado = TextboxLogin.Text;
             string Senha = textboxSenha.Text;
-            Resultado.Text = login;
-
-            if(login == null || login == "")// null=nulo, caso o usuario seja nulo, mensagem de erro.
+            Resultado.Text = loginbuscado;
+            
+            if(string.IsNullOrWhiteSpace(loginbuscado))
             {
                 Resultado.Text = "Usuario eh obrigatorio!!";
                 Resultado.ForeColor = Color.Red;
-                return; // termina a execucao do programa 
+                return;
             }
-              // se condição for verdadeira,condinua a condiçao
-            else if (Senha == null || Senha == "") ;
+              
+            if (Senha == null || Senha == "") 
             
                 {
-                    Resultado.Text = " Senha Obrigatória !!";
+                    Resultado.Text = " Senha eh Obrigatória !!";
                     Resultado.ForeColor = Color.Red;
-                return;
-                    
-
+                    return;
                 }
-              
-            // 
-
-
-                if (login == "Ems.Sousa" && Senha == "12345")
+                    
+            int posicaologinEncontrado = -1;
+            for (int i = 0; i < listaUsuarios.Count; i++) //3 condicoes de execucao,i representa o indice ou posicao ela é uma variavel 
+               //i acrescenta 1 toda vez que codigo roda, até chegar no 3 onde o programa para
             {
-                Resultado.Text = "Autentificado com sucesso!";
+                if (loginbuscado == listaUsuarios[i])
+                {
+                    posicaologinEncontrado = i;
+                }
+            }
+                if (posicaologinEncontrado > -1 && Senha == "12345")
+            {
+                Resultado.Text = "Autenticado com sucesso!";
                 Resultado.ForeColor = Color.Green;
             }
             else
@@ -60,13 +54,12 @@ namespace Login
                 Resultado.ForeColor = Color.Red;
             }
 
-
-            
-
-
-
-
-
         }
     }
 }
+            
+           
+
+        
+      
+

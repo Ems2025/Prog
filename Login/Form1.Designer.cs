@@ -74,7 +74,6 @@
             label1.Size = new Size(37, 15);
             label1.TabIndex = 3;
             label1.Text = "Login";
-            label1.Click += label1_Click;
             // 
             // label2
             // 
@@ -84,7 +83,6 @@
             label2.Size = new Size(39, 15);
             label2.TabIndex = 4;
             label2.Text = "Senha";
-            label2.Click += label2_Click;
             // 
             // label3
             // 
