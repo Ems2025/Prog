@@ -66,7 +66,7 @@
             // buttonEntrar
             // 
             buttonEntrar.BackColor = SystemColors.Control;
-            buttonEntrar.Location = new Point(445, 242);
+            buttonEntrar.Location = new Point(445, 260);
             buttonEntrar.Name = "buttonEntrar";
             buttonEntrar.Size = new Size(75, 23);
             buttonEntrar.TabIndex = 2;
@@ -170,7 +170,7 @@
             button1.Name = "button1";
             button1.Size = new Size(75, 23);
             button1.TabIndex = 13;
-            button1.Text = "button1";
+            button1.Text = "Cadastrar";
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click_1;
             // 
