@@ -39,8 +39,8 @@
             pictureBox1 = new PictureBox();
             Resultado = new Label();
             label4 = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
+            EmailCadastrar = new TextBox();
+            SenhaCadastrar = new TextBox();
             label5 = new Label();
             button1 = new Button();
             Cadastrar = new Label();
@@ -136,24 +136,26 @@
             label4.AutoSize = true;
             label4.Location = new Point(67, 158);
             label4.Name = "label4";
-            label4.Size = new Size(64, 15);
+            label4.Size = new Size(37, 15);
             label4.TabIndex = 9;
-            label4.Text = "LabelEmail";
+            label4.Text = "Login";
             label4.Click += label4_Click;
             // 
-            // textBox1
+            // EmailCadastrar
             // 
-            textBox1.Location = new Point(142, 150);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(100, 23);
-            textBox1.TabIndex = 10;
+            EmailCadastrar.Location = new Point(142, 150);
+            EmailCadastrar.Name = "EmailCadastrar";
+            EmailCadastrar.Size = new Size(100, 23);
+            EmailCadastrar.TabIndex = 10;
+            EmailCadastrar.TextChanged += EmailCadastrar_TextChanged;
             // 
-            // textBox2
+            // SenhaCadastrar
             // 
-            textBox2.Location = new Point(142, 197);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(100, 23);
-            textBox2.TabIndex = 11;
+            SenhaCadastrar.Location = new Point(142, 194);
+            SenhaCadastrar.Name = "SenhaCadastrar";
+            SenhaCadastrar.Size = new Size(100, 23);
+            SenhaCadastrar.TabIndex = 11;
+            SenhaCadastrar.TextChanged += textBox2_TextChanged;
             // 
             // label5
             // 
@@ -212,8 +214,8 @@
             Controls.Add(Cadastrar);
             Controls.Add(button1);
             Controls.Add(label5);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(SenhaCadastrar);
+            Controls.Add(EmailCadastrar);
             Controls.Add(label4);
             Controls.Add(Resultado);
             Controls.Add(labelTitulo);
@@ -243,8 +245,8 @@
         private PictureBox pictureBox1;
         private Label Resultado;
         private Label label4;
-        private TextBox textBox1;
-        private TextBox textBox2;
+        private TextBox EmailCadastrar;
+        private TextBox SenhaCadastrar;
         private Label label5;
         private Button button1;
         private Label Cadastrar;

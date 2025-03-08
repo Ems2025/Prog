@@ -7,6 +7,13 @@ namespace Login
     {
         List<string> listaUsuarios = new List<string>() { "neymar.jr", "pablo.Vittar}", "sukuna.silva" }; // Criar o array de nomes de usuários
         List<string> listaSenhas = new List<string>() { "bruna", "12345", "777" };
+
+        List<string> listaMaiusculas = new List<string>() { "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z" };
+        List<string> listaNumeros = new List<string>() { "1", "2", "3", "4", "5", "6", "7", "8", "9", "0" };
+        List<string> listaMinusculas = new List<string>() { "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z" };
+        List<char> listaEspaco = new List<char>() { '!', '@', '#', '$', '%', '&', '*' };
+
+
         public Formslogin()
         {
             InitializeComponent();
@@ -33,6 +40,7 @@ namespace Login
                 Resultado.ForeColor = Color.Red;
                 return;
             }
+
 
             int posicaologinEncontrado = -1;
             for (int i = 0; i < listaUsuarios.Count; i++) //3 condicoes de execucao,i representa o indice ou posicao ela é uma variavel 
@@ -62,12 +70,12 @@ namespace Login
         }
 
         private void button1_Click_1(object sender, EventArgs e)
-        {       // novas varias criadas para a parte CADASTRAR
+        {       // novas variaveis criadas para a parte CADASTRAR
             string novoUsuario = TextboxLogin.Text;
             string novaSenha = TextboxLogin.Text;
 
             // Comando para caso o usuario deixe em branco o login
-            if(string.IsNullOrEmpty(novoUsuario))
+            if (string.IsNullOrEmpty(novoUsuario))
             {
                 ResultadoCadastrar.Text = "Usuario eh Obrigatorio!";
                 return;
@@ -78,38 +86,98 @@ namespace Login
                 ResultadoCadastrar.Text = "Senha eh Obrigatoria!";
                 return;
             }
-             // comando para verificar se há usuarios com o mesmo nome 
+
+
+
             bool UsuarioEncontrado = false;
             for (int i = 0; i < listaUsuarios.Count; i++)
+
+
             {
-                if (novoUsuario == listaUsuarios[i])
+                if (novaSenha.Length < 8) ;
                 {
-                    UsuarioEncontrado = true;
+                    if (novoUsuario == listaUsuarios[i])
+                    {
+                        UsuarioEncontrado = true;
+
+                    }
+                    ResultadoCadastrar.Text = "A senha deve ter pelo menos 8 caracteres";
+                    return;
+                }
+            }
+            if (!UsuarioEncontrado)
+                if (!novaSenha.Any(char.IsUpper))
+                {
+                    listaUsuarios.Add(novoUsuario); // adiciona a lista usuario
+                    listaSenhas.Add(novaSenha);// addciona a lista Senhas
+                    ResultadoCadastrar.Text = "Usuario Cadastrado";
+                    ResultadoCadastrar.ForeColor = Color.Green;
+                    ResultadoCadastrar.Text = "A senha deve ter pelo menos uma letra maiuscula";
+                    return;
+                }
+
+
+
+
+                // comando para avisar que ja esxiste usuario com o mesmo nome 
+                else
+             if (!novaSenha.Any(char.IsLower))
+                {
+                    ResultadoCadastrar.Text = "A senha deve ter pelo menos uma letra minuscula";
+                    return;
+                }
+            if (!novaSenha.Any(char.IsDigit))
+            {
+                ResultadoCadastrar.Text = "Já existe um usuário cadastrado";
+                ResultadoCadastrar.Text = "A senha deve ter pelo menos um numero";
+                return;
+                {
+
 
                 }
             }
-            // comando para adicionar novo usuario com nomes diferentes a lista
-            if (UsuarioEncontrado == false)
+            if (!novaSenha.Any(char.IsPunctuation))
             {
-                listaUsuarios.Add(novoUsuario); // adiciona a lista usuario
-                listaSenhas.Add(novaSenha);// addciona a lista Senhas
-                ResultadoCadastrar.Text = "Usuario Cadastrado";
-                ResultadoCadastrar.ForeColor = Color.Green;
-          
+                ResultadoCadastrar.Text = "A senha deve ter pelo menos um caracter especial";
+                return;
             }
+            if (novaSenha.Contains(' '))
+            {
+                ResultadoCadastrar.Text = "A senha nao deve ter espacos em branco";
+                return;
 
-            // comando para avisar que ja esxiste usuario com o mesmo nome 
-            else
-            {
-                ResultadoCadastrar.Text = "Usuario já existente";
-                ResultadoCadastrar.ForeColor = Color.Red;
             }
+            if (listaUsuarios.Contains(novoUsuario))
+            {
+                ResultadoCadastrar.Text = "Já existe um usuário cadastrado";
+                return;
+            }
+            
+            
+            listaUsuarios.Add(novoUsuario);
+            listaSenhas.Add(novaSenha);
+            ResultadoCadastrar.Text = "Usuário cadastrado com sucesso!";
             
 
 
 
 
-            
+
+
+
+
+        }
+           
+
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void EmailCadastrar_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
