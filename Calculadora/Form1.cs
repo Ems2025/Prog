@@ -6,128 +6,185 @@ namespace Calculadora
         {
             InitializeComponent();
         }
-
-        private void label1_Click(object sender, EventArgs e)
+        private void LimparTextBox()
         {
-
+            Numero1.Clear();
+            Numerodois.Clear();
         }
 
-        private void Numero1_TextChanged(object sender, EventArgs e)
+        private bool ValidarForm()
+        {
+            if (string.IsNullOrWhiteSpace(Numero1.Text))
+            {
+                LabelRsultado.Text = "O valor 1 eh obrigatorio.";
+                Numero1.Focus();
+                return false;
+            }
+
+            if (string.IsNullOrWhiteSpace(Numerodois.Text))
+            {
+                LabelRsultado.Text = "O valor 2 eh obrigatorio.";
+                Numerodois.Focus();
+                return false;
+            }
+
+            try
+            {
+                double doubleValor1 = Convert.ToDouble(Numero1.Text);
+                double doubleValor2 = Convert.ToDouble(Numerodois.Text);
+
+                return true;
+            }
+            catch
+            {
+                LabelRsultado.Text = "Insira somente numeros";
+                LimparTextBox();
+                Numero1.Focus();
+                return false;
+            }
+        }
+
+        private static double Somar(double val1, double val2)
+        {
+            return val1 + val2;
+        }
+
+        private static double Subtrair(double val1, double val2)
+        {
+            return val1 - val2;
+        }
+
+        private static double Multiplicar(double val1, double val2)
+        {
+            return val1 * val2;
+        }
+
+        private static double Dividir(double val1, double val2)
+        {
+            return val1 / val2;
+        }
+
+        private void buttonCalcular_Click(object sender, EventArgs e)
+        {
+            textBoxResultado.Clear();
+            LabelRsultado.Text = "";
+
+            if (!ValidarForm())
+            {
+                return;
+            }
+
+            double doubleValor1 = Convert.ToDouble(Numero1.Text);
+            double doubleValor2 = Convert.ToDouble(Numerodois.Text);
+            double resultado;
+
+            switch (labelOperacao.Text)
+            {
+                case "+":
+                    resultado = Somar(doubleValor1, doubleValor2);
+                    break;
+                case "-":
+                    resultado = Subtrair(doubleValor1, doubleValor2);
+                    break;
+                case "*":
+                    resultado = Multiplicar(doubleValor1, doubleValor2);
+                    break;
+                case "/":
+                    resultado = Dividir(doubleValor1, doubleValor2);
+                    break;
+                default:
+                    resultado = Somar(doubleValor1, doubleValor2);
+                    break;
+            }
+
+            textBoxResultado.Text = Convert.ToString(resultado);
+            LimparTextBox();
+        }
+
+        private void radioButtonSoma_CheckedChanged(object sender, EventArgs e)
+        {
+            Numero1.Visible = true;
+            labelOperacao.Text = "+";
+        }
+
+        private void radioButtonSubtracao_CheckedChanged(object sender, EventArgs e)
+        {
+            labelOperacao.Text = "-";
+        }
+
+        private void radioButtonMultiplicacao_CheckedChanged(object sender, EventArgs e)
+        {
+            labelOperacao.Text = "*";
+        }
+
+        private void radioButtonDivisao_CheckedChanged(object sender, EventArgs e)
+        {
+            labelOperacao.Text = "/";
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            NovoForm novoForm = new NovoForm();
+            novoForm.Show();
 
-            string num1 = Numero1.Text;
-            string num2 = Numerodois.Text;
+            this.Hide();
 
-            double doublenum1 = Convert.ToDouble(num1);
-            double doublenum2 = Convert.ToDouble(num2);
-
-            if (!num1.All(char.IsNumber))
-            {
-                LabelRsultado.Text = "o valor 1 deve ser um numero";
-                return;
-            }
-
-            if (!num2.All(char.IsNumber))
-            {
-                LabelRsultado.Text = "o valor 2 deve ser um numero";
-                return;
-            }
-
-            double resultado = doublenum1 + doublenum2;
-
-
-            LabelRsultado.Text = resultado.ToString();
         }
-        private void Subtração_Click(object sender, EventArgs e)
+
+        private void button1_Click_1(object sender, EventArgs e)
         {
-            string num1 = Numero1.Text;
-            string num2 = Numerodois.Text;
+            textBoxResultado.Clear();
+            LabelRsultado.Text = "";
 
-            double doublenum1 = Convert.ToDouble(num1);
-            double doublenum2 = Convert.ToDouble(num2);
-
-            if (!num1.All(char.IsNumber))
+            if (!ValidarForm())
             {
-                LabelRsultado.Text = "o valor 1 deve ser um numero";
                 return;
             }
 
-            if (!num2.All(char.IsNumber))
+            double doubleValor1 = Convert.ToDouble(Numero1.Text);
+            double doubleValor2 = Convert.ToDouble(Numerodois.Text);
+            double resultado;
+
+            switch (labelOperacao.Text)
             {
-                LabelRsultado.Text = "o valor 2 deve ser um numero";
-                return;
+                case "+":
+                    resultado = Somar(doubleValor1, doubleValor2);
+                    break;
+                case "-":
+                    resultado = Subtrair(doubleValor1, doubleValor2);
+                    break;
+                case "*":
+                    resultado = Multiplicar(doubleValor1, doubleValor2);
+                    break;
+                case "/":
+                    resultado = Dividir(doubleValor1, doubleValor2);
+                    break;
+                default:
+                    resultado = Somar(doubleValor1, doubleValor2);
+                    break;
             }
 
-            double resultado = doublenum1 - doublenum2;
+            textBoxResultado.Text = Convert.ToString(resultado);
+            LimparTextBox();
 
-
-            LabelRsultado.Text = resultado.ToString();
         }
-        private void multiplicação_Click(object sender, EventArgs e)
+
+        private void labelOperacao_Click(object sender, EventArgs e)
         {
-            string num1 = Numero1.Text;
-            string num2 = Numerodois.Text;
 
-            double doublenum1 = Convert.ToDouble(num1);
-            double doublenum2 = Convert.ToDouble(num2);
-
-            if (!num1.All(char.IsNumber))
-            {
-                LabelRsultado.Text = "o valor 1 deve ser um numero";
-                return;
-            }
-
-            if (!num2.All(char.IsNumber))
-            {
-                LabelRsultado.Text = "o valor 2 deve ser um numero";
-                return;
-            }
-
-            double resultado = doublenum1 * doublenum2;
-
-
-            LabelRsultado.Text = resultado.ToString();
         }
-        private void divisão_Click(object sender, EventArgs e)
+
+        private void richTextBox1_TextChanged(object sender, EventArgs e)
         {
-            string num1 = Numero1.Text;
-            string num2 = Numerodois.Text;
-
-            double doublenum1 = Convert.ToDouble(num1);
-            double doublenum2 = Convert.ToDouble(num2);
-
-            if (!num1.All(char.IsNumber))
-            {
-                LabelRsultado.Text = "o valor 1 deve ser um numero";
-                return;
-            }
-
-            if (!num2.All(char.IsNumber))
-            {
-                LabelRsultado.Text = "o valor 2 deve ser um numero";
-                return;
-            }
-
-            double resultado = doublenum1 / doublenum2;
-
-
-            LabelRsultado.Text = resultado.ToString();
-
-
-
-
-
-
-
-
-
-
 
         }
     }
 }
+
+
+

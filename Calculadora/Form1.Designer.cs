@@ -30,91 +30,151 @@
         {
             Numero1 = new TextBox();
             Numerodois = new TextBox();
-            resultado = new Button();
             LabelRsultado = new Label();
-            Subtração = new Button();
-            multiplicação = new Button();
-            divisão = new Button();
+            label1 = new Label();
+            RadBSoma = new RadioButton();
+            radioButtonSubtração = new RadioButton();
+            radioButtonDivisao = new RadioButton();
+            radioButtonMultiplicacao = new RadioButton();
+            buttonCalcular = new Button();
+            textBoxResultado = new TextBox();
+            labelOperacao = new Label();
+            label2 = new Label();
             SuspendLayout();
             // 
             // Numero1
             // 
-            Numero1.Location = new Point(56, 57);
+            Numero1.Location = new Point(21, 60);
             Numero1.Name = "Numero1";
             Numero1.Size = new Size(100, 23);
             Numero1.TabIndex = 0;
-            Numero1.TextChanged += Numero1_TextChanged;
             // 
             // Numerodois
             // 
-            Numerodois.Location = new Point(195, 57);
+            Numerodois.Location = new Point(140, 60);
             Numerodois.Name = "Numerodois";
             Numerodois.Size = new Size(100, 23);
             Numerodois.TabIndex = 1;
             // 
-            // resultado
-            // 
-            resultado.Location = new Point(56, 107);
-            resultado.Name = "resultado";
-            resultado.Size = new Size(75, 23);
-            resultado.TabIndex = 2;
-            resultado.Text = "+";
-            resultado.UseVisualStyleBackColor = true;
-            resultado.Click += button1_Click;
-            // 
             // LabelRsultado
             // 
             LabelRsultado.AutoSize = true;
-            LabelRsultado.Location = new Point(231, 177);
+            LabelRsultado.Location = new Point(140, 195);
             LabelRsultado.Name = "LabelRsultado";
             LabelRsultado.Size = new Size(0, 15);
             LabelRsultado.TabIndex = 3;
-            LabelRsultado.Click += label1_Click;
             // 
-            // Subtração
+            // label1
             // 
-            Subtração.Location = new Point(156, 107);
-            Subtração.Name = "Subtração";
-            Subtração.Size = new Size(75, 23);
-            Subtração.TabIndex = 4;
-            Subtração.Text = "-";
-            Subtração.UseVisualStyleBackColor = true;
-            Subtração.Click += Subtração_Click;
+            label1.AutoSize = true;
+            label1.Location = new Point(107, 18);
+            label1.Name = "label1";
+            label1.Size = new Size(106, 15);
+            label1.TabIndex = 7;
+            label1.Text = "Digite os numeros ";
             // 
-            // multiplicação
+            // RadBSoma
             // 
-            multiplicação.Location = new Point(252, 107);
-            multiplicação.Name = "multiplicação";
-            multiplicação.Size = new Size(75, 23);
-            multiplicação.TabIndex = 5;
-            multiplicação.Text = "*";
-            multiplicação.UseVisualStyleBackColor = true;
-            multiplicação.Click += multiplicação_Click;
+            RadBSoma.AutoSize = true;
+            RadBSoma.Location = new Point(21, 98);
+            RadBSoma.Name = "RadBSoma";
+            RadBSoma.Size = new Size(55, 19);
+            RadBSoma.TabIndex = 8;
+            RadBSoma.TabStop = true;
+            RadBSoma.Text = "Soma";
+            RadBSoma.UseVisualStyleBackColor = true;
+            RadBSoma.CheckedChanged += radioButtonSoma_CheckedChanged;
             // 
-            // divisão
+            // radioButtonSubtração
             // 
-            divisão.Location = new Point(345, 107);
-            divisão.Name = "divisão";
-            divisão.Size = new Size(75, 23);
-            divisão.TabIndex = 6;
-            divisão.Text = "/";
-            divisão.UseVisualStyleBackColor = true;
-            divisão.Click += divisão_Click;
+            radioButtonSubtração.AutoSize = true;
+            radioButtonSubtração.Location = new Point(21, 123);
+            radioButtonSubtração.Name = "radioButtonSubtração";
+            radioButtonSubtração.Size = new Size(78, 19);
+            radioButtonSubtração.TabIndex = 9;
+            radioButtonSubtração.TabStop = true;
+            radioButtonSubtração.Text = "Subtração";
+            radioButtonSubtração.UseVisualStyleBackColor = true;
+            radioButtonSubtração.CheckedChanged += radioButtonSubtracao_CheckedChanged;
+            // 
+            // radioButtonDivisao
+            // 
+            radioButtonDivisao.AutoSize = true;
+            radioButtonDivisao.Location = new Point(143, 98);
+            radioButtonDivisao.Name = "radioButtonDivisao";
+            radioButtonDivisao.Size = new Size(63, 19);
+            radioButtonDivisao.TabIndex = 10;
+            radioButtonDivisao.TabStop = true;
+            radioButtonDivisao.Text = "Divisão";
+            radioButtonDivisao.UseVisualStyleBackColor = true;
+            radioButtonDivisao.CheckedChanged += radioButtonDivisao_CheckedChanged;
+            // 
+            // radioButtonMultiplicacao
+            // 
+            radioButtonMultiplicacao.AutoSize = true;
+            radioButtonMultiplicacao.Location = new Point(140, 123);
+            radioButtonMultiplicacao.Name = "radioButtonMultiplicacao";
+            radioButtonMultiplicacao.Size = new Size(97, 19);
+            radioButtonMultiplicacao.TabIndex = 11;
+            radioButtonMultiplicacao.TabStop = true;
+            radioButtonMultiplicacao.Text = "Multiplicação";
+            radioButtonMultiplicacao.UseVisualStyleBackColor = true;
+            radioButtonMultiplicacao.CheckedChanged += radioButtonMultiplicacao_CheckedChanged;
+            // 
+            // buttonCalcular
+            // 
+            buttonCalcular.Location = new Point(65, 191);
+            buttonCalcular.Name = "buttonCalcular";
+            buttonCalcular.Size = new Size(75, 23);
+            buttonCalcular.TabIndex = 13;
+            buttonCalcular.Text = "Calcular";
+            buttonCalcular.UseVisualStyleBackColor = true;
+            buttonCalcular.Click += button1_Click_1;
+            // 
+            // textBoxResultado
+            // 
+            textBoxResultado.Location = new Point(287, 60);
+            textBoxResultado.Name = "textBoxResultado";
+            textBoxResultado.Size = new Size(100, 23);
+            textBoxResultado.TabIndex = 14;
+            // 
+            // labelOperacao
+            // 
+            labelOperacao.AutoSize = true;
+            labelOperacao.Location = new Point(83, 158);
+            labelOperacao.Name = "labelOperacao";
+            labelOperacao.Size = new Size(0, 15);
+            labelOperacao.TabIndex = 15;
+            labelOperacao.Click += labelOperacao_Click;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(255, 63);
+            label2.Name = "label2";
+            label2.Size = new Size(15, 15);
+            label2.TabIndex = 16;
+            label2.Text = "=";
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(569, 372);
-            Controls.Add(divisão);
-            Controls.Add(multiplicação);
-            Controls.Add(Subtração);
+            Controls.Add(label2);
+            Controls.Add(labelOperacao);
+            Controls.Add(textBoxResultado);
+            Controls.Add(buttonCalcular);
+            Controls.Add(radioButtonMultiplicacao);
+            Controls.Add(radioButtonDivisao);
+            Controls.Add(radioButtonSubtração);
+            Controls.Add(RadBSoma);
+            Controls.Add(label1);
             Controls.Add(LabelRsultado);
-            Controls.Add(resultado);
             Controls.Add(Numerodois);
             Controls.Add(Numero1);
             Name = "Form1";
-            Text = "Form1";
+            Text = " ";
             ResumeLayout(false);
             PerformLayout();
         }
@@ -123,10 +183,15 @@
 
         private TextBox Numero1;
         private TextBox Numerodois;
-        private Button resultado;
         private Label LabelRsultado;
-        private Button Subtração;
-        private Button multiplicação;
-        private Button divisão;
+        private Label label1;
+        private RadioButton RadBSoma;
+        private RadioButton radioButtonSubtração;
+        private RadioButton radioButtonDivisao;
+        private RadioButton radioButtonMultiplicacao;
+        private Button buttonCalcular;
+        private TextBox textBoxResultado;
+        private Label labelOperacao;
+        private Label label2;
     }
 }
