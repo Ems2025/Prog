@@ -1,0 +1,16 @@
+C:\Users\emily.mssantos1\source\repos\calculadorageometrica\bin\Debug\net8.0-windows\calculadorageometrica.exe
+C:\Users\emily.mssantos1\source\repos\calculadorageometrica\bin\Debug\net8.0-windows\calculadorageometrica.deps.json
+C:\Users\emily.mssantos1\source\repos\calculadorageometrica\bin\Debug\net8.0-windows\calculadorageometrica.runtimeconfig.json
+C:\Users\emily.mssantos1\source\repos\calculadorageometrica\bin\Debug\net8.0-windows\calculadorageometrica.dll
+C:\Users\emily.mssantos1\source\repos\calculadorageometrica\bin\Debug\net8.0-windows\calculadorageometrica.pdb
+C:\Users\emily.mssantos1\source\repos\calculadorageometrica\obj\Debug\net8.0-windows\calculadorageometrica.Form1.resources
+C:\Users\emily.mssantos1\source\repos\calculadorageometrica\obj\Debug\net8.0-windows\calculadorageometrica.csproj.GenerateResource.cache
+C:\Users\emily.mssantos1\source\repos\calculadorageometrica\obj\Debug\net8.0-windows\calculadorageometrica.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\emily.mssantos1\source\repos\calculadorageometrica\obj\Debug\net8.0-windows\calculadorageometrica.AssemblyInfoInputs.cache
+C:\Users\emily.mssantos1\source\repos\calculadorageometrica\obj\Debug\net8.0-windows\calculadorageometrica.AssemblyInfo.cs
+C:\Users\emily.mssantos1\source\repos\calculadorageometrica\obj\Debug\net8.0-windows\calculadorageometrica.csproj.CoreCompileInputs.cache
+C:\Users\emily.mssantos1\source\repos\calculadorageometrica\obj\Debug\net8.0-windows\calculadorageometrica.dll
+C:\Users\emily.mssantos1\source\repos\calculadorageometrica\obj\Debug\net8.0-windows\refint\calculadorageometrica.dll
+C:\Users\emily.mssantos1\source\repos\calculadorageometrica\obj\Debug\net8.0-windows\calculadorageometrica.pdb
+C:\Users\emily.mssantos1\source\repos\calculadorageometrica\obj\Debug\net8.0-windows\calculadorageometrica.genruntimeconfig.cache
+C:\Users\emily.mssantos1\source\repos\calculadorageometrica\obj\Debug\net8.0-windows\ref\calculadorageometrica.dll

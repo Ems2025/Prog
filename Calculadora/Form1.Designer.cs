@@ -48,6 +48,7 @@
             Numero1.Name = "Numero1";
             Numero1.Size = new Size(100, 23);
             Numero1.TabIndex = 0;
+            Numero1.TextChanged += Numero1_TextChanged;
             // 
             // Numerodois
             // 
@@ -123,7 +124,7 @@
             // 
             // buttonCalcular
             // 
-            buttonCalcular.Location = new Point(65, 191);
+            buttonCalcular.Location = new Point(59, 195);
             buttonCalcular.Name = "buttonCalcular";
             buttonCalcular.Size = new Size(75, 23);
             buttonCalcular.TabIndex = 13;

@@ -103,7 +103,7 @@ namespace Calculadora
 
         private void radioButtonSoma_CheckedChanged(object sender, EventArgs e)
         {
-            Numero1.Visible = true;
+            
             labelOperacao.Text = "+";
         }
 
@@ -180,6 +180,11 @@ namespace Calculadora
         }
 
         private void richTextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Numero1_TextChanged(object sender, EventArgs e)
         {
 
         }
