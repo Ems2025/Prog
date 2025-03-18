@@ -1,0 +1,7 @@
+D:\Prog. Repositorio\Prog\CadastroCliente\obj\Debug\net8.0-windows\CadastroCliente.Form1.resources
+D:\Prog. Repositorio\Prog\CadastroCliente\obj\Debug\net8.0-windows\CadastroCliente.csproj.GenerateResource.cache
+D:\Prog. Repositorio\Prog\CadastroCliente\obj\Debug\net8.0-windows\CadastroCliente.GeneratedMSBuildEditorConfig.editorconfig
+D:\Prog. Repositorio\Prog\CadastroCliente\obj\Debug\net8.0-windows\CadastroCliente.AssemblyInfoInputs.cache
+D:\Prog. Repositorio\Prog\CadastroCliente\obj\Debug\net8.0-windows\CadastroCliente.AssemblyInfo.cs
+D:\Prog. Repositorio\Prog\CadastroCliente\obj\Debug\net8.0-windows\CadastroCliente.csproj.CoreCompileInputs.cache
+D:\Prog. Repositorio\Prog\CadastroCliente\obj\Debug\net8.0-windows\CadastroCliente.sourcelink.json
