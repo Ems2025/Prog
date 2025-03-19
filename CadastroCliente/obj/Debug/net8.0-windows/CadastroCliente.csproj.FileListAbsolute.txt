@@ -5,3 +5,14 @@ D:\Prog. Repositorio\Prog\CadastroCliente\obj\Debug\net8.0-windows\CadastroClien
 D:\Prog. Repositorio\Prog\CadastroCliente\obj\Debug\net8.0-windows\CadastroCliente.AssemblyInfo.cs
 D:\Prog. Repositorio\Prog\CadastroCliente\obj\Debug\net8.0-windows\CadastroCliente.csproj.CoreCompileInputs.cache
 D:\Prog. Repositorio\Prog\CadastroCliente\obj\Debug\net8.0-windows\CadastroCliente.sourcelink.json
+D:\Prog. Repositorio\Prog\CadastroCliente\bin\Debug\net8.0-windows\CadastroCliente.exe
+D:\Prog. Repositorio\Prog\CadastroCliente\bin\Debug\net8.0-windows\CadastroCliente.deps.json
+D:\Prog. Repositorio\Prog\CadastroCliente\bin\Debug\net8.0-windows\CadastroCliente.runtimeconfig.json
+D:\Prog. Repositorio\Prog\CadastroCliente\bin\Debug\net8.0-windows\CadastroCliente.dll
+D:\Prog. Repositorio\Prog\CadastroCliente\bin\Debug\net8.0-windows\CadastroCliente.pdb
+D:\Prog. Repositorio\Prog\CadastroCliente\obj\Debug\net8.0-windows\CadastroCliente.dll
+D:\Prog. Repositorio\Prog\CadastroCliente\obj\Debug\net8.0-windows\refint\CadastroCliente.dll
+D:\Prog. Repositorio\Prog\CadastroCliente\obj\Debug\net8.0-windows\CadastroCliente.pdb
+D:\Prog. Repositorio\Prog\CadastroCliente\obj\Debug\net8.0-windows\CadastroCliente.genruntimeconfig.cache
+D:\Prog. Repositorio\Prog\CadastroCliente\obj\Debug\net8.0-windows\ref\CadastroCliente.dll
+D:\Prog. Repositorio\Prog\CadastroCliente\obj\Debug\net8.0-windows\CadastroCliente.Properties.Resources.resources

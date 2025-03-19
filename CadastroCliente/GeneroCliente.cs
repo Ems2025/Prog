@@ -10,7 +10,8 @@ namespace CadastroCliente
     {
         Masculino,
         Feminino,
-        Outros
+        Outros,
+        PrefiroNãoInformar
        
 
     }

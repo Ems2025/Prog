@@ -9,21 +9,23 @@ namespace CadastroCliente
 {
     internal class Cliente
     {
-        public class Cliente
-        {
-            int Id;
+       
+        
+            public int Id { get; set; } 
            public string Nome {  get; set; }    
            public string DataNascimento { get; set; }
             public string Telefone { get; set; }
             public string Email { get; set; }
            public EnderecoCliente Endereco { get; set; }
-            public GeneroCliente Genero
-            string NomeSocial;
-            EtniaCliente Etnia;
-            bool Estrangeiro;
-            TipoCliente Tipo;
+            public GeneroCliente Genero { get; set; }
+            public string NomeSocial { get; set; }
+            public EtniaCliente Etnia { get; set; }
+            public bool Estrangeiro { get; set; }
+            public  TipoCliente Tipo { get; set; }
+             
+           
 
 
-        }
+        
     }
 }

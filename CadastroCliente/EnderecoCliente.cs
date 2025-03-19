@@ -8,12 +8,12 @@ namespace CadastroCliente
 {
     public class EnderecoCliente
     {
-        string Logadouro;
-        string Numero;
-        string Complemento;
-        string Bairro;
-        string Municipio;
-        string Estado;
-        string CEP;
+        public string Logadouro { get; set; }
+        public string Numero { get; set; }
+        public  string Complemento { get; set; }
+        public string Bairro { get; set; }
+        public string Municipio { get; set; }
+        public string Estado { get; set; }
+        public string CEP { get; set; }
     }
 }
