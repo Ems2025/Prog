@@ -46,6 +46,8 @@
             checkBoxNão = new CheckBox();
             buttonsalvar = new Button();
             groupBox1 = new GroupBox();
+            textBoxRua = new TextBox();
+            label18 = new Label();
             maskedCep = new MaskedTextBox();
             textBoxComplemento = new TextBox();
             textBoxBairro = new TextBox();
@@ -66,8 +68,8 @@
             label17 = new Label();
             checkBox1 = new CheckBox();
             checkBox2 = new CheckBox();
-            label18 = new Label();
-            textBoxRua = new TextBox();
+            radioButtonSim = new RadioButton();
+            radioButton2 = new RadioButton();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
@@ -75,11 +77,11 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Calisto MT", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(32, 86);
+            label1.Location = new Point(16, 86);
             label1.Name = "label1";
-            label1.Size = new Size(48, 17);
+            label1.Size = new Size(55, 17);
             label1.TabIndex = 0;
-            label1.Text = "Nome";
+            label1.Text = "Nome*";
             label1.Click += label1_Click;
             // 
             // textBoxNome
@@ -95,9 +97,9 @@
             label2.Font = new Font("Calisto MT", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label2.Location = new Point(369, 80);
             label2.Name = "label2";
-            label2.Size = new Size(64, 17);
+            label2.Size = new Size(75, 17);
             label2.TabIndex = 2;
-            label2.Text = "Telefone";
+            label2.Text = "Telefone *";
             // 
             // textBoxNomeSocial
             // 
@@ -110,11 +112,11 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Calisto MT", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.Location = new Point(34, 157);
+            label3.Location = new Point(16, 157);
             label3.Name = "label3";
-            label3.Size = new Size(46, 17);
+            label3.Size = new Size(53, 17);
             label3.TabIndex = 4;
-            label3.Text = "Email";
+            label3.Text = "Email*";
             // 
             // label4
             // 
@@ -128,9 +130,9 @@
             // 
             // textBoxEmail
             // 
-            textBoxEmail.Location = new Point(84, 151);
+            textBoxEmail.Location = new Point(84, 148);
             textBoxEmail.Name = "textBoxEmail";
-            textBoxEmail.Size = new Size(243, 23);
+            textBoxEmail.Size = new Size(229, 23);
             textBoxEmail.TabIndex = 7;
             // 
             // label5
@@ -165,6 +167,7 @@
             // 
             // comboBoxGenero
             // 
+            comboBoxGenero.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxGenero.FormattingEnabled = true;
             comboBoxGenero.Items.AddRange(new object[] { "Feminino ", "Mascullino", "Prefiro Não Informar" });
             comboBoxGenero.Location = new Point(441, 112);
@@ -183,6 +186,7 @@
             // 
             // comboBoxEtnia
             // 
+            comboBoxEtnia.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxEtnia.FormattingEnabled = true;
             comboBoxEtnia.Items.AddRange(new object[] { "Branco(a)", "Negro(a)", "Pardo (a)", "Indigena ", "Asiatico (a)", "outros", "Prefiro Não Informar" });
             comboBoxEtnia.Location = new Point(117, 203);
@@ -202,7 +206,7 @@
             // 
             label9.AutoSize = true;
             label9.Font = new Font("Calisto MT", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label9.Location = new Point(376, 202);
+            label9.Location = new Point(350, 201);
             label9.Name = "label9";
             label9.Size = new Size(80, 17);
             label9.TabIndex = 16;
@@ -211,17 +215,18 @@
             // checkBoxNão
             // 
             checkBoxNão.AutoSize = true;
-            checkBoxNão.Location = new Point(463, 202);
+            checkBoxNão.Location = new Point(341, 236);
             checkBoxNão.Name = "checkBoxNão";
             checkBoxNão.Size = new Size(48, 19);
             checkBoxNão.TabIndex = 18;
             checkBoxNão.Text = "Não";
             checkBoxNão.UseVisualStyleBackColor = true;
-            checkBoxNão.CheckedChanged += checkBoxNão_CheckedChanged;
+            
+
             // 
             // buttonsalvar
             // 
-            buttonsalvar.Location = new Point(205, 224);
+            buttonsalvar.Location = new Point(201, 203);
             buttonsalvar.Name = "buttonsalvar";
             buttonsalvar.Size = new Size(75, 23);
             buttonsalvar.TabIndex = 19;
@@ -248,16 +253,32 @@
             groupBox1.Controls.Add(label12);
             groupBox1.Controls.Add(label11);
             groupBox1.Controls.Add(labelLogradouro);
-            groupBox1.Location = new Point(56, 345);
+            groupBox1.Location = new Point(56, 347);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(527, 248);
+            groupBox1.Size = new Size(527, 246);
             groupBox1.TabIndex = 20;
             groupBox1.TabStop = false;
             groupBox1.Text = "groupBox1";
             // 
+            // textBoxRua
+            // 
+            textBoxRua.Location = new Point(83, 22);
+            textBoxRua.Name = "textBoxRua";
+            textBoxRua.Size = new Size(121, 23);
+            textBoxRua.TabIndex = 23;
+            // 
+            // label18
+            // 
+            label18.AutoSize = true;
+            label18.Location = new Point(10, 30);
+            label18.Name = "label18";
+            label18.Size = new Size(27, 15);
+            label18.TabIndex = 22;
+            label18.Text = "Rua";
+            // 
             // maskedCep
             // 
-            maskedCep.Location = new Point(83, 125);
+            maskedCep.Location = new Point(83, 100);
             maskedCep.Mask = "00000-000";
             maskedCep.Name = "maskedCep";
             maskedCep.Size = new Size(121, 23);
@@ -265,21 +286,21 @@
             // 
             // textBoxComplemento
             // 
-            textBoxComplemento.Location = new Point(190, 195);
+            textBoxComplemento.Location = new Point(319, 154);
             textBoxComplemento.Name = "textBoxComplemento";
             textBoxComplemento.Size = new Size(100, 23);
             textBoxComplemento.TabIndex = 13;
             // 
             // textBoxBairro
             // 
-            textBoxBairro.Location = new Point(310, 44);
+            textBoxBairro.Location = new Point(319, 27);
             textBoxBairro.Name = "textBoxBairro";
             textBoxBairro.Size = new Size(100, 23);
             textBoxBairro.TabIndex = 11;
             // 
             // textBoxNumero
             // 
-            textBoxNumero.Location = new Point(310, 92);
+            textBoxNumero.Location = new Point(319, 66);
             textBoxNumero.Name = "textBoxNumero";
             textBoxNumero.Size = new Size(100, 23);
             textBoxNumero.TabIndex = 10;
@@ -288,21 +309,21 @@
             // 
             comboBoxEstado.FormattingEnabled = true;
             comboBoxEstado.Items.AddRange(new object[] { "Acre", "Alagoas", "Amapá", "Amazonas", "Bahia", "Ceará", "Distrito Federal", "Espírito Santo", "Goiás", "Maranhão", "Mato Grosso", "Mato Grosso do Sul", "Minas Gerais", "Pará", "Paraíba", "Paraná", "Pernambuco", "Piauí", "Rio de Janeiro", "Rio Grande do Norte", "Rio Grande do Sul", "Rondônia", "Roraima", "Santa Catarina", "São Paulo", "Sergipe", "Tocantins" });
-            comboBoxEstado.Location = new Point(83, 92);
+            comboBoxEstado.Location = new Point(83, 61);
             comboBoxEstado.Name = "comboBoxEstado";
             comboBoxEstado.Size = new Size(121, 23);
             comboBoxEstado.TabIndex = 9;
             // 
             // textBoxlogradouro
             // 
-            textBoxlogradouro.Location = new Point(83, 166);
+            textBoxlogradouro.Location = new Point(83, 154);
             textBoxlogradouro.Name = "textBoxlogradouro";
             textBoxlogradouro.Size = new Size(121, 23);
             textBoxlogradouro.TabIndex = 8;
             // 
             // textBoxMunicipio
             // 
-            textBoxMunicipio.Location = new Point(310, 149);
+            textBoxMunicipio.Location = new Point(319, 108);
             textBoxMunicipio.Name = "textBoxMunicipio";
             textBoxMunicipio.Size = new Size(100, 23);
             textBoxMunicipio.TabIndex = 7;
@@ -310,7 +331,7 @@
             // label16
             // 
             label16.AutoSize = true;
-            label16.Location = new Point(8, 133);
+            label16.Location = new Point(9, 108);
             label16.Name = "label16";
             label16.Size = new Size(28, 15);
             label16.TabIndex = 6;
@@ -319,7 +340,7 @@
             // label15
             // 
             label15.AutoSize = true;
-            label15.Location = new Point(9, 100);
+            label15.Location = new Point(9, 69);
             label15.Name = "label15";
             label15.Size = new Size(42, 15);
             label15.TabIndex = 5;
@@ -328,7 +349,7 @@
             // label14
             // 
             label14.AutoSize = true;
-            label14.Location = new Point(249, 157);
+            label14.Location = new Point(249, 116);
             label14.Name = "label14";
             label14.Size = new Size(64, 15);
             label14.TabIndex = 4;
@@ -337,7 +358,7 @@
             // label13
             // 
             label13.AutoSize = true;
-            label13.Location = new Point(259, 44);
+            label13.Location = new Point(253, 35);
             label13.Name = "label13";
             label13.Size = new Size(38, 15);
             label13.TabIndex = 3;
@@ -346,7 +367,7 @@
             // label12
             // 
             label12.AutoSize = true;
-            label12.Location = new Point(83, 203);
+            label12.Location = new Point(229, 162);
             label12.Name = "label12";
             label12.Size = new Size(84, 15);
             label12.TabIndex = 2;
@@ -355,7 +376,7 @@
             // label11
             // 
             label11.AutoSize = true;
-            label11.Location = new Point(253, 100);
+            label11.Location = new Point(249, 74);
             label11.Name = "label11";
             label11.Size = new Size(51, 15);
             label11.TabIndex = 1;
@@ -364,7 +385,7 @@
             // labelLogradouro
             // 
             labelLogradouro.AutoSize = true;
-            labelLogradouro.Location = new Point(8, 174);
+            labelLogradouro.Location = new Point(8, 162);
             labelLogradouro.Name = "labelLogradouro";
             labelLogradouro.Size = new Size(69, 15);
             labelLogradouro.TabIndex = 0;
@@ -382,7 +403,7 @@
             // 
             label10.AutoSize = true;
             label10.Font = new Font("Calisto MT", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label10.Location = new Point(56, 311);
+            label10.Location = new Point(56, 296);
             label10.Name = "label10";
             label10.Size = new Size(123, 31);
             label10.TabIndex = 22;
@@ -425,27 +446,35 @@
             checkBox2.Text = "PF";
             checkBox2.UseVisualStyleBackColor = true;
             // 
-            // label18
+            // radioButtonSim
             // 
-            label18.AutoSize = true;
-            label18.Location = new Point(9, 61);
-            label18.Name = "label18";
-            label18.Size = new Size(27, 15);
-            label18.TabIndex = 22;
-            label18.Text = "Rua";
+            radioButtonSim.AutoSize = true;
+            radioButtonSim.Location = new Point(441, 201);
+            radioButtonSim.Name = "radioButtonSim";
+            radioButtonSim.Size = new Size(45, 19);
+            radioButtonSim.TabIndex = 27;
+            radioButtonSim.TabStop = true;
+            radioButtonSim.Text = "Sim";
+            radioButtonSim.UseVisualStyleBackColor = true;
             // 
-            // textBoxRua
+            // radioButton2
             // 
-            textBoxRua.Location = new Point(82, 58);
-            textBoxRua.Name = "textBoxRua";
-            textBoxRua.Size = new Size(100, 23);
-            textBoxRua.TabIndex = 23;
+            radioButton2.AutoSize = true;
+            radioButton2.Location = new Point(500, 201);
+            radioButton2.Name = "radioButton2";
+            radioButton2.Size = new Size(47, 19);
+            radioButton2.TabIndex = 28;
+            radioButton2.TabStop = true;
+            radioButton2.Text = "Não";
+            radioButton2.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(623, 605);
+            Controls.Add(radioButton2);
+            Controls.Add(radioButtonSim);
             Controls.Add(checkBox2);
             Controls.Add(checkBox1);
             Controls.Add(label17);
@@ -524,5 +553,7 @@
         private CheckBox checkBox2;
         private TextBox textBoxRua;
         private Label label18;
+        private RadioButton radioButtonSim;
+        private RadioButton radioButton2;
     }
 }

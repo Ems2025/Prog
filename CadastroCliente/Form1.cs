@@ -1,5 +1,3 @@
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
-
 namespace CadastroCliente
 {
     public partial class Form1 : Form
@@ -14,7 +12,7 @@ namespace CadastroCliente
 
             EnderecoCliente EndEms = new EnderecoCliente() { Bairro = "Cidade Domitila", CEP = "04387002", Complemento = "casa 2", Estado = "Sao Paulo", Numero = "188", Logadouro = "travessa da rua da feira", Municipio = "Sao Paulo" };
 
-            clientes.Add(new Cliente() { Id = 2, Nome = "Emily", DataNascimento = " 19/02/1997", Email = "Emily@email.com", Telefone = "56229552", Endereco = EndEms, Genero = GeneroCliente.Feminino, Etnia = EtniaCliente.Negro, NomeSocial = "Não tenho", Estrangeiro = false, Tipo = TipoCliente.PF });
+            clientes.Add(new Cliente() { Id = 2, Nome = "Emily", DataNascimento = " 19/02/1997", Email = "Emily@email.com", Telefone = "11940430014", Endereco = EndEms, Genero = GeneroCliente.Feminino, Etnia = EtniaCliente.Negro, NomeSocial = "Não tenho", Estrangeiro = false, Tipo = TipoCliente.PF });
 
             EnderecoCliente EndSan = new EnderecoCliente() { Bairro = "Cidade Domitila", CEP = "04387002", Complemento = "casa 1", Estado = "Sao Paulo", Numero = "188", Logadouro = "rua do mercado Ricoy", Municipio = "Sao Paulo" };
 
@@ -42,13 +40,13 @@ namespace CadastroCliente
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            // verifica se tem numero e mostra mensagem de erro 
             if (textBoxNome.Text.Any(char.IsNumber))
             {
                 MessageBox.Show("Insira Somente Letras");
                 return;
             }
-
+            //valida nome 
             if (string.IsNullOrEmpty(textBoxNome.Text))
             {
                 MessageBox.Show("Nome é Obrigatório");
@@ -56,13 +54,7 @@ namespace CadastroCliente
                 return;
             }
 
-            if (!textBoxEmail.Text.Any(char.IsPunctuation) && !textBoxEmail.Text.Contains('@'))
-
-            {
-                MessageBox.Show("O Email não é Válido");
-                return;
-            }
-
+            // verifica se o campo emais está vazio 
             if (string.IsNullOrEmpty(textBoxEmail.Text))
             {
                 MessageBox.Show("Email é Obrigatório");
@@ -71,6 +63,26 @@ namespace CadastroCliente
 
             }
 
+            //verifica se tem caracteres especiais no email
+            if (!textBoxEmail.Text.Any(char.IsPunctuation) && !textBoxEmail.Text.Contains('@'))
+
+            {
+                MessageBox.Show(" Email invalido ");
+                return;
+
+            }
+
+            //Verifica se o email ja existe 
+            for (int i = 0; i < clientes.Count; i++)
+            {
+                if (clientes[i].Email == textBoxEmail.Text)
+                {
+                    MessageBox.Show("Email já existe");
+                    return;
+
+                }
+            }
+            //Valida  etnia
             if (comboBoxEtnia.SelectedIndex == -1)
             {
                 MessageBox.Show("Por favor selecione a Etnia");
@@ -78,9 +90,57 @@ namespace CadastroCliente
                 return;
             }
 
+
+            for (int i = 0; i < clientes.Count; i++)
+            {
+                if (clientes[i].Telefone == maskedTelefone.Text)
+                {
+                    MessageBox.Show("Numero de telefone já cadastrado");
+                    return;
+                }
+
+            }
+
+
+
+
+            // verifica se o campo telefone está em branco
+            if (string.IsNullOrEmpty(maskedTelefone.Text))
+            {
+                MessageBox.Show("Telefone é Obrigatório");
+                maskedTelefone.Focus();
+                return;
+
+            }
+
+
+
+
+
             if (comboBoxGenero.SelectedIndex == -1)
             {
                 MessageBox.Show("Por favor Selecione o Genero");
+                return;
+            }
+
+
+            // validaçao da data 
+            if (string.IsNullOrEmpty(maskedDataNascimento.Text))
+            {
+                MessageBox.Show("Por favor insira a data de nascimento");
+                maskedDataNascimento.Focus();
+                return;
+
+            }
+
+            //verifica se a Data é Valida
+            try
+            {
+                Convert.ToDateTime(maskedDataNascimento.Text);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Data de nascimento não é válida");
                 return;
             }
 
@@ -129,11 +189,6 @@ namespace CadastroCliente
                 return;
             }
 
-            if (textBoxMunicipio.Text.Any(char.IsNumber))
-            {
-                MessageBox.Show("Insira Somente Letras");
-                return;
-            }
 
             if (string.IsNullOrEmpty(textBoxMunicipio.Text))
             {
@@ -144,14 +199,15 @@ namespace CadastroCliente
 
             if (string.IsNullOrEmpty(textBoxlogradouro.Text))
             {
-                MessageBox.Show("Numero é Obrigatório");
+                MessageBox.Show("Logradouro é Obrigatório");
                 textBoxlogradouro.Focus();
                 return;
             }
 
+
             if (string.IsNullOrEmpty(textBoxComplemento.Text))
             {
-                MessageBox.Show("Numero é Obrigatório");
+                MessageBox.Show("Complemento é Obrigatório");
                 textBoxComplemento.Focus();
                 return;
             }
@@ -167,18 +223,41 @@ namespace CadastroCliente
 
 
 
-
-
-
-
         }
 
-        private void checkBoxNão_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
