@@ -1,8 +1,11 @@
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
+
 namespace CadastroCliente
 {
     public partial class Form1 : Form
     {
         List<Cliente> clientes = new List<Cliente>();
+        List<Cliente> NovosClientes = new List<Cliente>();
 
         public Form1()
         {
@@ -21,6 +24,10 @@ namespace CadastroCliente
 
             clientes.Add(new Cliente() { Id = 4, Nome = "Alex", DataNascimento = " 28/10/1994", Email = "Alex@email.com", Telefone = "56443558", Endereco = EndAlex, Genero = GeneroCliente.Masculino, Etnia = EtniaCliente.Branco, NomeSocial = "Não tenho", Estrangeiro = false, Tipo = TipoCliente.PF });
 
+            NovosClientes.Add(new Cliente() { Nome = textBoxNome.Text, DataNascimento = maskedDataNascimento.Text, Email = textBoxEmail.Text, Telefone = maskedTelefone.Text, });
+
+
+
 
         }
         private void label1_Click(object sender, EventArgs e)
@@ -36,40 +43,138 @@ namespace CadastroCliente
         private void button1_Click(object sender, EventArgs e)
         {
 
-
-            if (string.IsNullOrEmpty(textBoxLogradouro.Text))
+            if (textBoxNome.Text.Any(char.IsNumber))
             {
-                labelErro.Text = "Preenchimento Obrigatorio";
-                textBoxLogradouro.Focus();
-                labelErro.ForeColor = Color.Red;
+                MessageBox.Show("Insira Somente Letras");
                 return;
             }
-            if (string.IsNullOrEmpty (textBoxNome.Text))
+
+            if (string.IsNullOrEmpty(textBoxNome.Text))
             {
-                labelErro.Text = "Preenchimento Obrigatorio";
+                MessageBox.Show("Nome é Obrigatório");
                 textBoxNome.Focus();
-                labelErro.ForeColor = Color.Red;    
-                return; 
-            }
-            if (string.IsNullOrWhiteSpace(textBoxNomeSocial.Text))
-            {
-                labelErro.Text = "Preenchimento Obrigatorio";
-                textBoxNomeSocial.Focus();  
-                labelErro.ForeColor = Color.Red; 
                 return;
-
             }
-            if (string.IsNullOrWhiteSpace(textBoxEmail.Text))
+
+            if (!textBoxEmail.Text.Any(char.IsPunctuation) && !textBoxEmail.Text.Contains('@'))
+
             {
-                labelErro.Text = "Preenchimento Obrigatorio";
+                MessageBox.Show("O Email não é Válido");
+                return;
+            }
+
+            if (string.IsNullOrEmpty(textBoxEmail.Text))
+            {
+                MessageBox.Show("Email é Obrigatório");
                 textBoxEmail.Focus();
-                labelErro.ForeColor = Color.Red; 
                 return;
 
+            }
+
+            if (comboBoxEtnia.SelectedIndex == -1)
+            {
+                MessageBox.Show("Por favor selecione a Etnia");
+
+                return;
+            }
+
+            if (comboBoxGenero.SelectedIndex == -1)
+            {
+                MessageBox.Show("Por favor Selecione o Genero");
+                return;
+            }
+
+
+            if (!checkBoxNão.Checked)
+
+            {
+                MessageBox.Show("Por favor informe se você é estrangeiro(a)");
+                return;
+
+            }
+
+            if (comboBoxEstado.SelectedIndex == -1)
+            {
+                MessageBox.Show("Por favor selecione o Estado");
+
+                return;
+            }
+
+            if (string.IsNullOrEmpty(maskedCep.Text) || maskedCep.MaskCompleted == false)
+            {
+                MessageBox.Show("CEP invalido");
+                return;
+            }
+
+            if (textBoxBairro.Text.Any(char.IsNumber))
+            {
+                MessageBox.Show("Insira Somente Letras");
+                return;
+            }
+
+
+            if (string.IsNullOrEmpty(textBoxBairro.Text))
+            {
+                MessageBox.Show("Bairro é Obrigatório");
+                textBoxBairro.Focus();
+                return;
 
             }
 
 
+            if (string.IsNullOrEmpty(textBoxNumero.Text))
+            {
+                MessageBox.Show("Numero é Obrigatório");
+                textBoxNumero.Focus();
+                return;
+            }
+
+            if (textBoxMunicipio.Text.Any(char.IsNumber))
+            {
+                MessageBox.Show("Insira Somente Letras");
+                return;
+            }
+
+            if (string.IsNullOrEmpty(textBoxMunicipio.Text))
+            {
+                MessageBox.Show("Municipio é Obrigatório");
+                textBoxNumero.Focus();
+                return;
+            }
+
+            if (string.IsNullOrEmpty(textBoxlogradouro.Text))
+            {
+                MessageBox.Show("Numero é Obrigatório");
+                textBoxlogradouro.Focus();
+                return;
+            }
+
+            if (string.IsNullOrEmpty(textBoxComplemento.Text))
+            {
+                MessageBox.Show("Numero é Obrigatório");
+                textBoxComplemento.Focus();
+                return;
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        }
+
+        private void checkBoxNão_CheckedChanged(object sender, EventArgs e)
+        {
 
         }
     }

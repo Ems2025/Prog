@@ -22,8 +22,8 @@ namespace CadastroCliente
             public EtniaCliente Etnia { get; set; }
             public bool Estrangeiro { get; set; }
             public  TipoCliente Tipo { get; set; }
-             
-           
+            
+            
 
 
         
