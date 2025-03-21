@@ -70,7 +70,9 @@
             checkBox2 = new CheckBox();
             radioButtonSim = new RadioButton();
             radioButton2 = new RadioButton();
+            DataGridViewCliente = new DataGridView();
             groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)DataGridViewCliente).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -82,7 +84,6 @@
             label1.Size = new Size(55, 17);
             label1.TabIndex = 0;
             label1.Text = "Nome*";
-            label1.Click += label1_Click;
             // 
             // textBoxNome
             // 
@@ -221,8 +222,6 @@
             checkBoxNão.TabIndex = 18;
             checkBoxNão.Text = "Não";
             checkBoxNão.UseVisualStyleBackColor = true;
-            
-
             // 
             // buttonsalvar
             // 
@@ -468,11 +467,26 @@
             radioButton2.Text = "Não";
             radioButton2.UseVisualStyleBackColor = true;
             // 
+            // DataGridViewCliente
+            // 
+            DataGridViewCliente.AllowUserToAddRows = false;
+            DataGridViewCliente.AllowUserToDeleteRows = false;
+            DataGridViewCliente.AllowUserToOrderColumns = true;
+            DataGridViewCliente.AllowUserToResizeRows = false;
+            DataGridViewCliente.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            DataGridViewCliente.Location = new Point(589, 86);
+            DataGridViewCliente.MultiSelect = false;
+            DataGridViewCliente.Name = "DataGridViewCliente";
+            DataGridViewCliente.ReadOnly = true;
+            DataGridViewCliente.Size = new Size(370, 291);
+            DataGridViewCliente.TabIndex = 3;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(623, 605);
+            ClientSize = new Size(1003, 605);
+            Controls.Add(DataGridViewCliente);
             Controls.Add(radioButton2);
             Controls.Add(radioButtonSim);
             Controls.Add(checkBox2);
@@ -506,6 +520,7 @@
             Text = "Form1";
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)DataGridViewCliente).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -555,5 +570,6 @@
         private Label label18;
         private RadioButton radioButtonSim;
         private RadioButton radioButton2;
+        private DataGridView DataGridViewCliente;
     }
 }

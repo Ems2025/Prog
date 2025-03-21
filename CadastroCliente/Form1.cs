@@ -1,9 +1,11 @@
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
+
 namespace CadastroCliente
 {
     public partial class Form1 : Form
     {
         List<Cliente> clientes = new List<Cliente>();
-        List<Cliente> NovosClientes = new List<Cliente>();
+        private readonly BindingSource BindingSource = [];
 
         public Form1()
         {
@@ -22,20 +24,10 @@ namespace CadastroCliente
 
             clientes.Add(new Cliente() { Id = 4, Nome = "Alex", DataNascimento = " 28/10/1994", Email = "Alex@email.com", Telefone = "56443558", Endereco = EndAlex, Genero = GeneroCliente.Masculino, Etnia = EtniaCliente.Branco, NomeSocial = "Não tenho", Estrangeiro = false, Tipo = TipoCliente.PF });
 
-            NovosClientes.Add(new Cliente() { Nome = textBoxNome.Text, DataNascimento = maskedDataNascimento.Text, Email = textBoxEmail.Text, Telefone = maskedTelefone.Text, });
+            BindingSource.DataSource = clientes;
+            DataGridViewCliente.DataSource = BindingSource;
 
-
-
-
-        }
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
-        {
-
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -204,13 +196,7 @@ namespace CadastroCliente
                 return;
             }
 
-
-            if (string.IsNullOrEmpty(textBoxComplemento.Text))
-            {
-                MessageBox.Show("Complemento é Obrigatório");
-                textBoxComplemento.Focus();
-                return;
-            }
+            clientes.Add(new Cliente() { Nome = textBoxNome.Text, DataNascimento = maskedDataNascimento.Text, Email = textBoxEmail.Text, NomeSocial = textBoxMunicipio.Text });  
 
 
 
@@ -223,6 +209,10 @@ namespace CadastroCliente
 
 
 
+
+
+
+            BindingSource.ResetBindings(false);
         }
 
     }
