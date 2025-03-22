@@ -1,4 +1,4 @@
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
+using System.Text.RegularExpressions;
 
 namespace CadastroCliente
 {
@@ -14,7 +14,7 @@ namespace CadastroCliente
 
             EnderecoCliente EndEms = new EnderecoCliente() { Bairro = "Cidade Domitila", CEP = "04387002", Complemento = "casa 2", Estado = "Sao Paulo", Numero = "188", Logadouro = "travessa da rua da feira", Municipio = "Sao Paulo" };
 
-            clientes.Add(new Cliente() { Id = 2, Nome = "Emily", DataNascimento = " 19/02/1997", Email = "Emily@email.com", Telefone = "11940430014", Endereco = EndEms, Genero = GeneroCliente.Feminino, Etnia = EtniaCliente.Negro, NomeSocial = "Não tenho", Estrangeiro = false, Tipo = TipoCliente.PF });
+            clientes.Add(new Cliente() { Id = 2, Nome = "Emily", DataNascimento = " 19/02/1997", Email = "Emily@email.com", Telefone = "(11)94043-0014", Endereco = EndEms, Genero = GeneroCliente.Feminino, Etnia = EtniaCliente.Negro, NomeSocial = "Não tenho", Estrangeiro = false, Tipo = TipoCliente.PF });
 
             EnderecoCliente EndSan = new EnderecoCliente() { Bairro = "Cidade Domitila", CEP = "04387002", Complemento = "casa 1", Estado = "Sao Paulo", Numero = "188", Logadouro = "rua do mercado Ricoy", Municipio = "Sao Paulo" };
 
@@ -27,11 +27,15 @@ namespace CadastroCliente
             BindingSource.DataSource = clientes;
             DataGridViewCliente.DataSource = BindingSource;
 
-            
+
         }
+
+
+
 
         private void button1_Click(object sender, EventArgs e)
         {
+
             // verifica se tem numero e mostra mensagem de erro 
             if (textBoxNome.Text.Any(char.IsNumber))
             {
@@ -46,7 +50,7 @@ namespace CadastroCliente
                 return;
             }
 
-            // verifica se o campo emais está vazio 
+            // verifica se o campo email está vazio 
             if (string.IsNullOrEmpty(textBoxEmail.Text))
             {
                 MessageBox.Show("Email é Obrigatório");
@@ -71,17 +75,21 @@ namespace CadastroCliente
                 {
                     MessageBox.Show("Email já existe");
                     return;
-
                 }
             }
-            //Valida  etnia
-            if (comboBoxEtnia.SelectedIndex == -1)
+
+
+            //Valida Telefone
+            string telefone = Regex.Replace(maskedTelefone.Text, "[^0-9]", "");
+
+            // Verifica se o telefone tem 10 ou 11 dígitos (fixo ou celular)
+            if (telefone.Length == 10 || telefone.Length == 11)
             {
-                MessageBox.Show("Por favor selecione a Etnia");
-
-                return;
             }
-
+            else
+            {
+                MessageBox.Show("Telefone inválido!");
+            }
 
             for (int i = 0; i < clientes.Count; i++)
             {
@@ -94,28 +102,6 @@ namespace CadastroCliente
             }
 
 
-
-
-            // verifica se o campo telefone está em branco
-            if (string.IsNullOrEmpty(maskedTelefone.Text))
-            {
-                MessageBox.Show("Telefone é Obrigatório");
-                maskedTelefone.Focus();
-                return;
-
-            }
-
-
-
-
-
-            if (comboBoxGenero.SelectedIndex == -1)
-            {
-                MessageBox.Show("Por favor Selecione o Genero");
-                return;
-            }
-
-
             // validaçao da data 
             if (string.IsNullOrEmpty(maskedDataNascimento.Text))
             {
@@ -124,7 +110,6 @@ namespace CadastroCliente
                 return;
 
             }
-
             //verifica se a Data é Valida
             try
             {
@@ -137,12 +122,71 @@ namespace CadastroCliente
             }
 
 
+            //Valida  etnia
+            if (comboBoxEtnia.SelectedIndex == -1)
+            {
+                MessageBox.Show("Por favor selecione a Etnia");
+
+                return;
+            }
+
+            if (comboBoxGenero.SelectedIndex == -1)
+            {
+                MessageBox.Show("Por favor Selecione o Genero");
+                return;
+            }
+
+
             if (!checkBoxNão.Checked)
 
             {
                 MessageBox.Show("Por favor informe se você é estrangeiro(a)");
                 return;
 
+            }
+
+            if (!checkBoxPF.Checked)
+            {
+                MessageBox.Show("Por Favor, informe se você é pessoa fisica ou juridica");
+                return;
+            }
+            if (string.IsNullOrEmpty(textBoxEndereco.Text))
+            {
+                MessageBox.Show(" Endereço é Obrigatório");
+                textBoxEndereco.Focus();
+                return;
+
+            }
+            if (string.IsNullOrEmpty(maskedCep.Text) || maskedCep.MaskCompleted == false)
+            {
+                MessageBox.Show("CEP invalido");
+                return;
+            }
+            if (string.IsNullOrEmpty(textBoxNumero.Text))
+            {
+                MessageBox.Show("Numero é Obrigatório");
+                textBoxNumero.Focus();
+                return;
+            }
+            if (string.IsNullOrEmpty(textBoxlogradouro.Text))
+            {
+                MessageBox.Show("Logradouro é Obrigatório");
+                textBoxlogradouro.Focus();
+                return;
+            }
+
+            if (string.IsNullOrEmpty(textBoxBairro.Text))
+            {
+                MessageBox.Show("Bairro é Obrigatório");
+                textBoxBairro.Focus();
+                return;
+
+            }
+            if (string.IsNullOrEmpty(textBoxMunicipio.Text))
+            {
+                MessageBox.Show("Municipio é Obrigatório");
+                textBoxNumero.Focus();
+                return;
             }
 
             if (comboBoxEstado.SelectedIndex == -1)
@@ -152,71 +196,54 @@ namespace CadastroCliente
                 return;
             }
 
-            if (string.IsNullOrEmpty(maskedCep.Text) || maskedCep.MaskCompleted == false)
+            clientes.Add(new Cliente()
             {
-                MessageBox.Show("CEP invalido");
-                return;
-            }
+                Nome = textBoxNome.Text,
+                DataNascimento = maskedDataNascimento.Text,
+                Email = textBoxEmail.Text,
+                NomeSocial = textBoxNomeSocial.Text,
+                Endereco = new EnderecoCliente()
+                {
+                    Bairro = textBoxBairro.Text,
+                    CEP = maskedCep.Text,
+                    Logadouro = textBoxlogradouro.Text,
+                    Complemento = textBoxComplemento.Text,
+                    Estado = comboBoxEstado.Text,
+                    Municipio = textBoxMunicipio.Text,
+                    Numero = textBoxNumero.Text
+                },
+                Genero = (GeneroCliente)comboBoxGenero.SelectedIndex,
+                Etnia = (EtniaCliente)comboBoxEtnia.SelectedIndex,
+                Estrangeiro = checkBoxNão.Checked,
+                Tipo = TipoCliente.PF,
+                Telefone = maskedTelefone.Text, 
 
-            if (textBoxBairro.Text.Any(char.IsNumber))
-            {
-                MessageBox.Show("Insira Somente Letras");
-                return;
-            }
-
-
-            if (string.IsNullOrEmpty(textBoxBairro.Text))
-            {
-                MessageBox.Show("Bairro é Obrigatório");
-                textBoxBairro.Focus();
-                return;
-
-            }
-
-
-            if (string.IsNullOrEmpty(textBoxNumero.Text))
-            {
-                MessageBox.Show("Numero é Obrigatório");
-                textBoxNumero.Focus();
-                return;
-            }
-
-
-            if (string.IsNullOrEmpty(textBoxMunicipio.Text))
-            {
-                MessageBox.Show("Municipio é Obrigatório");
-                textBoxNumero.Focus();
-                return;
-            }
-
-            if (string.IsNullOrEmpty(textBoxlogradouro.Text))
-            {
-                MessageBox.Show("Logradouro é Obrigatório");
-                textBoxlogradouro.Focus();
-                return;
-            }
-
-            clientes.Add(new Cliente() { Nome = textBoxNome.Text, DataNascimento = maskedDataNascimento.Text, Email = textBoxEmail.Text, NomeSocial = textBoxMunicipio.Text });  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            });
 
             BindingSource.ResetBindings(false);
+
+
         }
 
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
+
+
+
 
 
 

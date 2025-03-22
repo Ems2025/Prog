@@ -63,6 +63,46 @@ namespace CadastroCliente.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _7023004 {
+            get {
+                object obj = ResourceManager.GetObject("7023004", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _70230041 {
+            get {
+                object obj = ResourceManager.GetObject("70230041", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Clients_27015 {
+            get {
+                object obj = ResourceManager.GetObject("Clients_27015", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap customerservicewoman_100622 {
+            get {
+                object obj = ResourceManager.GetObject("customerservicewoman_100622", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap e2775355944ba0cc972b900d60d39925 {
             get {
                 object obj = ResourceManager.GetObject("e2775355944ba0cc972b900d60d39925", resourceCulture);
@@ -73,9 +113,61 @@ namespace CadastroCliente.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap png_clipart_person_computer_icons_team_goal_angelo_secchi_blue_rectangle {
+            get {
+                object obj = ResourceManager.GetObject("png-clipart-person-computer-icons-team-goal-angelo-secchi-blue-rectangle", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap png_clipart_person_computer_icons_team_goal_angelo_secchi_blue_rectangle1 {
+            get {
+                object obj = ResourceManager.GetObject("png-clipart-person-computer-icons-team-goal-angelo-secchi-blue-rectangle1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap png_clipart_users_group_logo_others {
+            get {
+                object obj = ResourceManager.GetObject("png-clipart-users-group-logo-others", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap transparent_gradient_background_free_png {
             get {
                 object obj = ResourceManager.GetObject("transparent-gradient-background-free-png", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap two_people_icon_in_trendy_flat_style_isolated_on_white_background_people_symbol_users_for_web_and_mobile_apps_free_vector {
+            get {
+                object obj = ResourceManager.GetObject("two-people-icon-in-trendy-flat-style-isolated-on-white-background-people-symbol-u" +
+                        "sers-for-web-and-mobile-apps-free-vector", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap two_people_icon_in_trendy_flat_style_isolated_on_white_background_people_symbol_users_for_web_and_mobile_apps_free_vector1 {
+            get {
+                object obj = ResourceManager.GetObject("two-people-icon-in-trendy-flat-style-isolated-on-white-background-people-symbol-u" +
+                        "sers-for-web-and-mobile-apps-free-vector1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
