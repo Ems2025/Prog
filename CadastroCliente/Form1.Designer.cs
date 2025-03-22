@@ -63,11 +63,11 @@
             labelErro = new Label();
             maskedDataNascimento = new MaskedTextBox();
             label17 = new Label();
-            checkBox1 = new CheckBox();
-            checkBoxPF = new CheckBox();
             DataGridViewCliente = new DataGridView();
             button1 = new Button();
             pictureBox1 = new PictureBox();
+            radioButtonPJ = new RadioButton();
+            radioButtonPF = new RadioButton();
             ((System.ComponentModel.ISupportInitialize)DataGridViewCliente).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -377,26 +377,6 @@
             label17.TabIndex = 24;
             label17.Text = "Tipo de Pessoa";
             // 
-            // checkBox1
-            // 
-            checkBox1.AutoSize = true;
-            checkBox1.Location = new Point(323, 250);
-            checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(36, 19);
-            checkBox1.TabIndex = 25;
-            checkBox1.Text = "PJ";
-            checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // checkBoxPF
-            // 
-            checkBoxPF.AutoSize = true;
-            checkBoxPF.Location = new Point(269, 250);
-            checkBoxPF.Name = "checkBoxPF";
-            checkBoxPF.Size = new Size(39, 19);
-            checkBoxPF.TabIndex = 26;
-            checkBoxPF.Text = "PF";
-            checkBoxPF.UseVisualStyleBackColor = true;
-            // 
             // DataGridViewCliente
             // 
             DataGridViewCliente.AllowUserToAddRows = false;
@@ -432,12 +412,36 @@
             pictureBox1.TabIndex = 30;
             pictureBox1.TabStop = false;
             // 
+            // radioButtonPJ
+            // 
+            radioButtonPJ.AutoSize = true;
+            radioButtonPJ.Location = new Point(319, 235);
+            radioButtonPJ.Name = "radioButtonPJ";
+            radioButtonPJ.Size = new Size(35, 19);
+            radioButtonPJ.TabIndex = 31;
+            radioButtonPJ.TabStop = true;
+            radioButtonPJ.Text = "PJ";
+            radioButtonPJ.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonPF
+            // 
+            radioButtonPF.AutoSize = true;
+            radioButtonPF.Location = new Point(269, 237);
+            radioButtonPF.Name = "radioButtonPF";
+            radioButtonPF.Size = new Size(38, 19);
+            radioButtonPF.TabIndex = 32;
+            radioButtonPF.TabStop = true;
+            radioButtonPF.Text = "PF";
+            radioButtonPF.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImageLayout = ImageLayout.Center;
             ClientSize = new Size(627, 605);
+            Controls.Add(radioButtonPF);
+            Controls.Add(radioButtonPJ);
             Controls.Add(pictureBox1);
             Controls.Add(button1);
             Controls.Add(textBoxComplemento);
@@ -455,8 +459,6 @@
             Controls.Add(textBoxMunicipio);
             Controls.Add(textBoxNumero);
             Controls.Add(label14);
-            Controls.Add(checkBoxPF);
-            Controls.Add(checkBox1);
             Controls.Add(label13);
             Controls.Add(label17);
             Controls.Add(maskedDataNascimento);
@@ -526,12 +528,12 @@
         private MaskedTextBox maskedCep;
         private MaskedTextBox maskedDataNascimento;
         private Label label17;
-        private CheckBox checkBox1;
-        private CheckBox checkBoxPF;
         private TextBox textBoxEndereco;
         private Label label18;
         private DataGridView DataGridViewCliente;
         private Button button1;
         private PictureBox pictureBox1;
+        private RadioButton radioButtonPJ;
+        private RadioButton radioButtonPF;
     }
 }

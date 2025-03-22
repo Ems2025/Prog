@@ -145,7 +145,7 @@ namespace CadastroCliente
 
             }
 
-            if (!checkBoxPF.Checked)
+            if (!radioButtonPF.Checked && !radioButtonPJ.Checked) 
             {
                 MessageBox.Show("Por Favor, informe se você é pessoa fisica ou juridica");
                 return;
@@ -195,6 +195,15 @@ namespace CadastroCliente
 
                 return;
             }
+            TipoCliente tipo = 0;
+            if (radioButtonPJ.Checked)
+            {
+                tipo = TipoCliente.PJ;  
+            }
+            if (radioButtonPF.Checked)
+            {
+                tipo = TipoCliente.PF;
+            }
 
             clientes.Add(new Cliente()
             {
@@ -215,7 +224,7 @@ namespace CadastroCliente
                 Genero = (GeneroCliente)comboBoxGenero.SelectedIndex,
                 Etnia = (EtniaCliente)comboBoxEtnia.SelectedIndex,
                 Estrangeiro = checkBoxNão.Checked,
-                Tipo = TipoCliente.PF,
+                Tipo = tipo,
                 Telefone = maskedTelefone.Text, 
 
             });
