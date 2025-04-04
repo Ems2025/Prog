@@ -86,21 +86,34 @@ values ('RH'), ('TI'), ('Vendas');
 CREATE TABLE IF NOT EXISTS Empregado (
     id INT PRIMARY KEY AUTO_INCREMENT,
     nome VARCHAR(100) NOT NULL,
-    departamento_id INT NOT NULL,
+  id_departamento INT NOT NULL,
     FOREIGN KEY (departamento_id)
         REFERENCES Departamento (id)
 );
 /* insert tabela empregado*/
-insert into Empregado( nome, departamento_id)
+insert into Empregado( nome, id_departamento)
 Values ('Joao', '1'), ('Sarah', '2'), ('Miguel', '3'),('Ana','2');
 
 /*Exercicio 4, tarefa 1*/
 SELECT 
-    Empregado.nome, Departamento.nome
+    e.nome as empregado, D.nome as departamento
 FROM
     Empregado
         JOIN
-    departamento ON Empregado.departamento_id = Departamento.id; 
+    departamento d ON e.id_departamento = d.id; 
+
+SELECT 
+    d.nome AS departamento, e.nome AS Empregado
+FROM
+    departamento d
+        LEFT JOIN
+    exercicio e ON d.id = e.id_departamento;
+
+
+
+
+
+
 
 /*Exercicio 5, tarefa 1 */
 SELECT * 
@@ -109,22 +122,19 @@ WHERE salario > (SELECT AVG(salario) FROM exercicio);
 
 /*Exercicio 5, tarefa 2*/
 SELECT 
-departamento
-from exercicio 
-where nome = 'Sarah';
-
-SELECT 
-    id
+    e.nome AS Empregado, d.nome AS Departamento
 FROM
-    departamento
+    exercicio e
+        INNER JOIN
+    departamento d ON e.id_departamento = d.id
 WHERE
-    nome = (SELECT 
-            departamento
+id_departamento = (SELECT 
+            e.id_departamento
         FROM
-            exercicio
+            exercicio e
         WHERE
-            nome = 'Sarah');
-            
+            nome = 'Sarah'); 
+
 /*Exercicio 6, tarefa 1*/
 INSERT INTO Empregado(
 nome, idade, id_departamento, salario)
@@ -135,7 +145,7 @@ VALUES
 /*Exercicio 6, tarefa 2 */
 UPDATE Empregado 
 SET 
-    Empregado.salario = Empregado.salario + (Empregado.salario * 0.05)
+    Empregado.salario = Empregado.salario + (Empregado.salario * 1.05)
 WHERE
     Empregado.id_departamento = (SELECT 
             departamento.id
