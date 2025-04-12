@@ -1,39 +1,33 @@
 using System.Text.RegularExpressions;
+using CadastroCliente.Dominio;
 
 namespace CadastroCliente
 {
     public partial class Form1 : Form
     {
-        List<Cliente> clientes = new List<Cliente>();
+        private readonly Cliente Cliente = new();
+
+        private readonly List<Cliente> clientes = [];
         private readonly BindingSource BindingSource = [];
+
+        
+       
 
         public Form1()
         {
 
             InitializeComponent();
 
-            EnderecoCliente EndEms = new EnderecoCliente() { Bairro = "Cidade Domitila", CEP = "04387002", Complemento = "casa 2", Estado = "Sao Paulo", Numero = "188", Logadouro = "travessa da rua da feira", Municipio = "Sao Paulo" };
-
-            clientes.Add(new Cliente() { Id = 2, Nome = "Emily", DataNascimento = " 19/02/1997", Email = "Emily@email.com", Telefone = "(11)94043-0014", Endereco = EndEms, Genero = GeneroCliente.Feminino, Etnia = EtniaCliente.Negro, NomeSocial = "Não tenho", Estrangeiro = false, Tipo = TipoCliente.PF });
-
-            EnderecoCliente EndSan = new EnderecoCliente() { Bairro = "Cidade Domitila", CEP = "04387002", Complemento = "casa 1", Estado = "Sao Paulo", Numero = "188", Logadouro = "rua do mercado Ricoy", Municipio = "Sao Paulo" };
-
-            clientes.Add(new Cliente() { Id = 3, Nome = "San", DataNascimento = " 04/09/1971", Email = "Sandra@email.com", Telefone = "56259522", Endereco = EndSan, Genero = GeneroCliente.Feminino, Etnia = EtniaCliente.Pardo, NomeSocial = "Não tenho", Estrangeiro = false, Tipo = TipoCliente.PF });
-
-            EnderecoCliente EndAlex = new EnderecoCliente() { Bairro = "Vila Joaniza", CEP = "04429300", Complemento = "casa 3", Estado = "Sao Paulo", Numero = "188", Logadouro = "Ladiera 1", Municipio = "Sao Paulo" };
-
-            clientes.Add(new Cliente() { Id = 4, Nome = "Alex", DataNascimento = " 28/10/1994", Email = "Alex@email.com", Telefone = "56443558", Endereco = EndAlex, Genero = GeneroCliente.Masculino, Etnia = EtniaCliente.Branco, NomeSocial = "Não tenho", Estrangeiro = false, Tipo = TipoCliente.PF });
-
-            BindingSource.DataSource = clientes;
-            DataGridViewCliente.DataSource = BindingSource;
-
+           
 
         }
 
+        private MaskedTextBox GetMaskedDataNascimento()
+        {
+            return maskedDataNascimento;
+        }
 
-
-
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e, MaskedTextBox maskedDataNascimento)
         {
 
             // verifica se tem numero e mostra mensagem de erro 
@@ -215,7 +209,7 @@ namespace CadastroCliente
                 {
                     Bairro = textBoxBairro.Text,
                     CEP = maskedCep.Text,
-                    Logadouro = textBoxlogradouro.Text,
+                    Logradouro = textBoxlogradouro.Text,
                     Complemento = textBoxComplemento.Text,
                     Estado = comboBoxEstado.Text,
                     Municipio = textBoxMunicipio.Text,

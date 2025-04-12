@@ -1,3 +1,4 @@
+using MySql.Data.MySqlClient;
 using System.Diagnostics.Eventing.Reader;
 
 namespace Login
@@ -5,30 +6,14 @@ namespace Login
 
     public partial class Formslogin : Form
     {
-        List<string> listaUsuarios = new List<string>() { "neymar.jr", "pablo.Vittar}", "sukuna.silva" }; // Criar o array de nomes de usuários
-        List<string> listaSenhas = new List<string>() { "bruna", "12345", "777" };
-
-
-
-        Classe_Usuario neymar = new Classe_Usuario() { Email = " neymar.jr@email.com", Senha = "Brun@123" };
-        Classe_Usuario pablo = new Classe_Usuario() { Email = "pablo.vitar@email.com", Senha = "12345" };
-        Classe_Usuario sukuna = new Classe_Usuario() { Email = "sukuna.silva@email.com", Senha = "777" };
-
-        List<Classe_Usuario> usuarios = new List<Classe_Usuario>();
-        
-        
-        List<string> listaMaiusculas = new List<string>() { "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z" };
-        List<string> listaNumeros = new List<string>() { "1", "2", "3", "4", "5", "6", "7", "8", "9", "0" };
-        List<string> listaMinusculas = new List<string>() { "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z" };
-        List<char> listaEspaco = new List<char>() { '!', '@', '#', '$', '%', '&', '*' };
+        private static readonly string ConnectionString = "datasource=localhost;username=root;password=;database=senac;";
+        private readonly MySqlConnection Connection = new MySqlConnection(ConnectionString);
 
 
         public Formslogin()
         {
             InitializeComponent();
-            usuarios.Add(neymar);
-            usuarios.Add(pablo);
-            usuarios.Add(sukuna);
+          
         }
 
         private void button1_Click(object sender, EventArgs e)

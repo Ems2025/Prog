@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CadastroCliente
+namespace CadastroCliente.Dominio
 {
     enum GeneroCliente
     {
@@ -12,7 +12,7 @@ namespace CadastroCliente
         Feminino,
         Outros,
         PrefiroNãoInformar
-       
+
 
     }
 }

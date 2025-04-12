@@ -23,4 +23,8 @@
     </EmbeddedResource>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="banco_dedados\" />
+  </ItemGroup>
+
 </Project>
